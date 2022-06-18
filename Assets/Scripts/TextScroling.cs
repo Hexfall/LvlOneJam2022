@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Managers;
 
 
 public class TextScroling : MonoBehaviour
@@ -59,8 +60,9 @@ public class TextScroling : MonoBehaviour
                         break;
                     case '$':
                         //wait
-                        //clap
-                        //wait
+                        GameManager.Instance.StartApplause();
+                        timer += timeBetweenCharecters*3;
+                        //new bouble
                         break;
                     default:
                         talebobleText.text += talkLines[lineIndex][charectorIndex];

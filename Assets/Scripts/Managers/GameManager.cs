@@ -39,5 +39,8 @@ namespace Managers
         {
             _npcs.Add(npc);
         }
+        public void StartApplause(){
+            
+        }
     }
 }
