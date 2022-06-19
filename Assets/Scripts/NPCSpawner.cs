@@ -49,8 +49,8 @@ public class NPCSpawner : MonoBehaviour
         {
             Vector2 center = i < BannedSpawnOffsets.Count ? BannedSpawnOffsets[i] : Vector2.zero,
                 area = BannedSpawnAreas[i];
-            if (v.x < center.x - area.x || center.x + area.x < v.x || v.y < center.y - area.y ||
-                center.y + area.y < v.y)
+            if (center.x - area.x < v.x && v.x < center.x + area.x && center.y - area.y < v.y &&
+                v.y < center.y + area.y)
                 return GetRandomSpawnPoint();
         }
         return v;
@@ -71,7 +71,14 @@ public class NPCSpawner : MonoBehaviour
         Gizmos.DrawCube(SpawnOffset, SpawnArea*2);
         Gizmos.color = Color.red;
         for (var i = 0; i < BannedSpawnAreas.Count; i++)
-            Gizmos.DrawCube(BannedSpawnOffsets.Count < i ? BannedSpawnOffsets[i] : Vector2.zero, BannedSpawnAreas[i]*2);
+            try
+            {
+                Gizmos.DrawCube(BannedSpawnOffsets[i], BannedSpawnAreas[i]*2);
+            }
+            catch (Exception _ignored)
+            {
+                Gizmos.DrawCube(Vector2.zero, BannedSpawnAreas[i]*2);
+            }
         Gizmos.color = Color.magenta;
         foreach (var p in SecuritySpawns)
             Gizmos.DrawSphere(p, .1f);
