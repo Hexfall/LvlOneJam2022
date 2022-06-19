@@ -20,6 +20,7 @@ namespace Managers
             }
         }
 
+        private int _collectibleCount = 0;
         private List<NPC> _npcs = new();
 
         private void Awake()
@@ -35,6 +36,18 @@ namespace Managers
             }
         }
 
+        public void AddCollectible()
+        {
+            _collectibleCount++;
+        }
+
+        public void RemoveCollectible()
+        {
+            _collectibleCount--;
+            if (_collectibleCount <= 0)
+                HiderWon();
+        }
+
         public void AddNPC(NPC npc)
         {
             _npcs.Add(npc);
@@ -48,6 +61,11 @@ namespace Managers
         public void SeekerWon()
         {
             Debug.Log("Caught player.");
+        }
+
+        public void HiderWon()
+        {
+            Debug.Log("Hider wins!");
         }
     }
 }
