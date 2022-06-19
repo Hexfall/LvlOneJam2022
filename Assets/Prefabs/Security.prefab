@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: bfa24fa55e1e5984aae02a657493257a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 003fe12b8a7e44f33a6d3993fd57acec, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -131,6 +131,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnTime: 1
+  holdTime: 1
+  despawnTime: 1
   speed: 5
 --- !u!1 &9069631588359146023
 GameObject:
@@ -205,7 +207,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: bfa24fa55e1e5984aae02a657493257a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 003fe12b8a7e44f33a6d3993fd57acec, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0

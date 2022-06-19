@@ -3,8 +3,8 @@ using UnityEngine;
 public class Clickable : MonoBehaviour
 {
     private SpriteRenderer _sprite;
-    public Sprite idleSprite;
-    public Sprite hoverSprite;
+    public Color idleColor;
+    public Color hoverColor;
     
     private NPCSpawner _spawner;
 
@@ -15,12 +15,12 @@ public class Clickable : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        _sprite.sprite = hoverSprite;
+        _sprite.color = hoverColor;
     }
 
     private void OnMouseExit()
     {
-        _sprite.sprite = idleSprite;
+        _sprite.color = idleColor;
     }
 
     private void OnMouseDown()

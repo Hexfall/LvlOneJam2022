@@ -10,7 +10,7 @@ public class TextScroling : MonoBehaviour
 {
     public TMP_Text talebobleText;
     public string [] talkLines = {
-        "<sprite=0><sprite=1><sprite=1><sprite=1><sprite=1><sprite=2> <sprite=0><sprite=1><sprite=2>",
+        "<sprite=0><sprite=1><sprite=1>$<sprite=1><sprite=1><sprite=2> <sprite=0><sprite=1><sprite=2>",
         "<sprite=0><sprite=1><sprite=1><sprite=2> <sprite=0><sprite=1><sprite=1><sprite=1><sprite=2>"
     };
     public float timeBetweenCharecters;

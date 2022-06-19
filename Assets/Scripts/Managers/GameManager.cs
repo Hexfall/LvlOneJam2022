@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Managers
 {
@@ -61,11 +62,14 @@ namespace Managers
         public void SeekerWon()
         {
             Debug.Log("Caught player.");
+            _collectibleCount = 0;
+            SceneManager.LoadScene("SampleScene");
         }
 
         public void HiderWon()
         {
             Debug.Log("Hider wins!");
+            SceneManager.LoadScene("SampleScene");
         }
     }
 }
