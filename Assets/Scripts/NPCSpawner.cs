@@ -75,7 +75,7 @@ public class NPCSpawner : MonoBehaviour
             {
                 Gizmos.DrawCube(BannedSpawnOffsets[i], BannedSpawnAreas[i]*2);
             }
-            catch (Exception _ignored)
+            catch (Exception)
             {
                 Gizmos.DrawCube(Vector2.zero, BannedSpawnAreas[i]*2);
             }
