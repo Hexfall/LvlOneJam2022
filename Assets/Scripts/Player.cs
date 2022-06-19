@@ -17,7 +17,6 @@ public class Player : Movable
             Destroy(GetComponent<NPC>());
             _npc = false;
         }
-        Debug.Log(dir);
         if (dir.magnitude < 0.1)
             StopMove();
         else

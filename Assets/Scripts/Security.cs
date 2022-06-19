@@ -1,4 +1,5 @@
 using System;
+using Managers;
 using UnityEngine;
 
 public class Security : MonoBehaviour
@@ -11,6 +12,7 @@ public class Security : MonoBehaviour
     private GameObject _target;
     private Vector2 _spawn;
     private bool _abducted;
+    private bool _gotPlayer;
     private Vector2 Dir => ((_abducted ? _spawn : _target.transform.position) - transform.position).normalized;
 
     private void Start()
@@ -55,14 +57,23 @@ public class Security : MonoBehaviour
                     if (despawnTime > 0)
                         despawnTime -= Time.fixedDeltaTime;
                     else
-                        Destroy(gameObject);
+                        SelfDestruct();
                 }
             }
         }
     }
 
+    private void SelfDestruct()
+    {
+        if (_gotPlayer)
+            GameManager.Instance.SeekerWon();
+        Destroy(gameObject);
+    }
+
     private void Abduct(GameObject target)
     {
+        if (target.GetComponent<Player>() != null)
+            _gotPlayer = true;
         var movableComponent = target.GetComponent<Movable>();
         if (movableComponent != null)
             Destroy(movableComponent);

@@ -44,5 +44,10 @@ namespace Managers
         {
             Debug.Log("Pretend the applause has started.");
         }
+
+        public void SeekerWon()
+        {
+            Debug.Log("Caught player.");
+        }
     }
 }
